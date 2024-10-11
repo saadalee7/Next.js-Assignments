@@ -1,3 +1,4 @@
+"use client"
 import { TypeAnimation } from 'react-type-animation';
 
 const ExampleComponent = () => {
