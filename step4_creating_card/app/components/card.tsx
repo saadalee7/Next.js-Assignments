@@ -17,7 +17,7 @@ const Card = (props: Iprops) => {
     <>
       <div className="flex flex-wrap justify-center">
         <div className="relative justify-items-center max-w-sm rounded overflow-hidden shadow-lg bg-white p-5 m-4 border border-gray-300">
-          <Image src={"/logo.png"} alt={"logo"} width={10} height={10} />
+          <Image src={"/logo.png"} alt={"logo"} width={50} height={50} />
           <h1>
             <strong className="text-blue-400">Name:</strong> {props.name}
           </h1>
