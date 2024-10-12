@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, ChangeEvent, FormEvent } from "react";
 
 const Contact = () => {
   const [form, setForm] = useState({
@@ -8,11 +8,11 @@ const Contact = () => {
     message: ""
   });
 
-  const handleChange = (e: { target: { name: any; value: any; }; }) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: { preventDefault: () => void; }) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     // Handle form submission logic here, such as sending data to an API
     console.log("Form submitted:", form);
@@ -20,7 +20,10 @@ const Contact = () => {
   };
 
   return (
-    <div id="contact" className="max-w-md mx-auto bg-white rounded-lg shadow-lg p-6 m-4 border border-gray-300 transition transform hover:scale-105 duration-300">
+    <div
+      id="contact"
+      className="max-w-md mx-auto bg-white rounded-lg shadow-lg p-6 m-4 border border-gray-300 transition transform hover:scale-105 duration-300"
+    >
       <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">Contact Me</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
